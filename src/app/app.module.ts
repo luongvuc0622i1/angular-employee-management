@@ -8,12 +8,14 @@ import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {Auth_interceptor} from "./service/auth_interceptor";
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './account/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
     imports: [
         BrowserModule,
