@@ -1,0 +1,39 @@
+<h1>Form create new</h1>
+<form [formGroup]="employeeForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Username:</td>
+      <td><input type="text" formControlName="username"></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="text" formControlName="password"></td>
+    </tr>
+    <tr>
+      <td>FirstName:</td>
+      <td><input type="text" formControlName="firstName"></td>
+    </tr>
+    <tr>
+      <td>LastName:</td>
+      <td><input type="text" formControlName="lastName"></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><input type="text" formControlName="email"></td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td><input type="text" formControlName="phone"></td>
+    </tr>
+    <tr>
+      <td>Status:</td>
+      <td><input type="number" formControlName="status"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Tạo mới</button>
+      </td>
+    </tr>
+  </table>
+</form>

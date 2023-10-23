@@ -7,21 +7,33 @@ import { AccountComponent } from './account/account.component';
 import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {Auth_interceptor} from "./service/auth_interceptor";
+import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './account/header/header.component';
+import { ListEmployeeComponent } from './list-employee/list-employee.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListEmployeeComponent,
+    CreateEmployeeComponent,
+    EditEmployeeComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      MatDialogModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule
     ],
   providers: [
     {

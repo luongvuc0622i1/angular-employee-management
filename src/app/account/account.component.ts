@@ -96,7 +96,6 @@ export class AccountComponent implements OnInit, AfterViewInit {
       this.form.password
     );
     this.authService.login(this.form).subscribe(data => {
-        console.log('Login data --- >', data);
         if (data.token != undefined) {
           this.tokenService.setID(data.id);
           this.tokenService.setToken(data.token);
@@ -146,7 +145,6 @@ export class AccountComponent implements OnInit, AfterViewInit {
       return;
     } else {
       this.authService.signUp(this.signUpForm).subscribe(data => {
-          console.log('data ---> ', data);
           if (data != null) {
             this.statusRegister = 'Register Success!';
             return;
