@@ -28,11 +28,16 @@ export class ListEmployeeComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.employeeService.delete(id).subscribe(() => {
-      // window.location.reload();
-    }, e => {
-      console.log(e);
-    });
+    if (window.confirm("Bạn có chắc chắn muốn xóa không?")) {
+      // Thực hiện xóa dữ liệu ở đây nếu người dùng đã xác nhận
+      this.employeeService.delete(id).subscribe(() => {
+        window.location.reload();
+      }, e => {
+        console.log(e);
+      });
+    } else {
+      // Không thực hiện xóa dữ liệu nếu người dùng đã hủy bỏ
+    }
   }
 
   openDialog(id: number): void {
