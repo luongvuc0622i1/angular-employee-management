@@ -1,4 +1,4 @@
-<h1>Danh sách nhân viên</h1>
+<!-- <h1>Danh sách nhân viên</h1>
 <button (click)="openDialog(-1)">Create New</button>
 <table>
   <tr>
@@ -28,4 +28,67 @@
       <button (click)="delete(employee.id)">Delete</button>
     </td>
   </tr>
-</table>
+</table> -->
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="header">
+                    <div class="col-lg-6" style="float: left">
+                      <h1 class="title">Employee List</h1>
+                      <p class="category"></p>
+                    </div>
+                    <div class="col-lg-6" style="float: right">
+                      <button (click)="openDialog(-1)" class="btn btn-primary btn-fill pull-right" style="float: right">
+                        <i class="pe-7s-plus"></i>  Create New
+                      </button>
+                    </div>
+                  </div>
+                  <div class="content table-responsive table-full-width">
+                      <table class="table table-hover table-striped">
+                          <thead>
+                          <tr>
+                            <th>STT</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th style="text-align: center">Action</th>
+                              <!-- <th style="width: 120px; text-align: right">Pass Score</th> -->
+                              <!-- <th style="width: 200px"></th> -->
+                          </tr>
+                          </thead>
+                          <tbody id="myTable">
+                            <tr *ngFor="let employee of employees; index as i">
+                              <td>{{i + 1}}</td>
+                              <td>{{employee.username}}</td>
+                              <td>{{employee.password}}</td>
+                              <td>{{employee.firstName}}</td>
+                              <td>{{employee.lastName}}</td>
+                              <td>{{employee.email}}</td>
+                              <td>{{employee.phone}}</td>
+                              <td>{{employee.status}}</td>
+                              <td style="text-align: center">
+                                <a class="view" title="View" data-toggle="tooltip" (click)="openDialog(employee.id)">
+                                    <i class="material-icons">&#xE417;</i>
+                                    <p class="hidden-lg hidden-md">Edit</p>
+                                </a>
+                                <a class="delete" title="Delete" data-toggle="tooltip" (click)="delete(employee.id)">
+                                    <i class="material-icons">&#xE872;</i>
+                                    <p class="hidden-lg hidden-md">Delete</p>
+                                </a>
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
