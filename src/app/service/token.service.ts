@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 const ID_KEY = 'ID_KEY';
 const USERNAME_KEY = 'Username_Key';
 const TOKEN_KEY = 'Token_Key';
-const ROLESET_KEY = 'RoleSet_Key';
+const ROLE_KEY = 'Role_Key';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
-
-  public roleSet = [];
 
   constructor() { }
 
@@ -43,21 +41,13 @@ export class TokenService {
     return localStorage.getItem(TOKEN_KEY);
   }
 
-  public setRoleSet(roleSet: string[]) {
-    localStorage.removeItem(ROLESET_KEY);
-    localStorage.setItem(ROLESET_KEY, JSON.stringify(roleSet));
+  public setRole(role: string) {
+    localStorage.removeItem(ROLE_KEY);
+    localStorage.setItem(ROLE_KEY, role);
   }
 
-  public getRoleSet(): string[] {
-    this.roleSet = [];
-    if (this.getToken()) {
-      // @ts-ignore
-      JSON.parse(localStorage.getItem(ROLESET_KEY)).forEach(roleSet => {
-        // @ts-ignore
-        this.roleSet.push(roleSet.authority);
-      })
-    }
-    return this.roleSet;
+  public getRole(): string {
+    // @ts-ignore
+    return localStorage.getItem(ROLE_KEY);
   }
-
 }

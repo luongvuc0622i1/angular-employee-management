@@ -1,5 +1,5 @@
 <h1>Danh sách nhân viên</h1>
-<button (click)="openDialog()">Tạo mới</button>
+<button (click)="openDialog(-1)">Create New</button>
 <table>
   <tr>
     <td>STT</td>
@@ -21,7 +21,11 @@
     <td>{{employee.email}}</td>
     <td>{{employee.phone}}</td>
     <td>{{employee.status}}</td>
-    <td><a [routerLink]="['/product/edit',employee.id]">Edit</a></td>
-    <td><a [routerLink]="['/product/delete',employee.id]">Delete</a></td>
+    <td>
+      <button (click)="openDialog(employee.id)">Edit</button>
+    </td>
+    <td>
+      <button (click)="delete(employee.id)">Delete</button>
+    </td>
   </tr>
 </table>

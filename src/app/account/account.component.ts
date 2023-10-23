@@ -100,7 +100,7 @@ export class AccountComponent implements OnInit, AfterViewInit {
           this.tokenService.setID(data.id);
           this.tokenService.setToken(data.token);
           this.tokenService.setUsername(data.username);
-          this.tokenService.setRoleSet(data.roleSet);
+          this.tokenService.setRole(data.authorities[0].authority);
 
           this.statusLogin = 'Login Success!';
           this.router.navigate(['/home']);

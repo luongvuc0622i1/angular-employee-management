@@ -23,7 +23,7 @@ export class EmployeeService {
   }
 
   findById(id: number): Observable<Employee> {
-    return this.http.get<Employee>(`${API_URL}/employees/${id}`);
+    return this.http.get<Employee>(`${API_URL}/profile/${id}`);
   }
 
   update(id: number, employee : FormEmployee): Observable<Employee> {
@@ -33,6 +33,7 @@ export class EmployeeService {
   delete(id: number): Observable<Employee> {
     return this.http.delete<Employee>(`${API_URL}/employees/${id}`);
   }
+  
   reset() {
     //
   }

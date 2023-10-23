@@ -1,1 +1,37 @@
-<p>edit-employee works!</p>
+<h1>Cập nhật thông tin danh mục sản phẩm</h1>
+<form [formGroup]="employeeForm" (ngSubmit)="update()">
+  <table>
+    <tr>
+      <td>Username:</td>
+      <td><input type="text" formControlName="username"></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="text" formControlName="password"></td>
+    </tr>
+    <tr>
+      <td>FirstName:</td>
+      <td><input type="text" formControlName="firstName"></td>
+    </tr>
+    <tr>
+      <td>LastName:</td>
+      <td><input type="text" formControlName="lastName"></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><input type="text" formControlName="email"></td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td><input type="text" formControlName="phone"></td>
+    </tr>
+    <tr>
+      <td>Status:</td>
+      <td><input type="number" formControlName="status"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Cập nhật</button></td>
+    </tr>
+  </table>
+</form>

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateEmployeeComponent } from '../create-employee/create-employee.component';
 import { Employee } from '../model/Employee';
 import { EmployeeService } from '../service/employee.service';
+import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 
 @Component({
   selector: 'app-list-employee',
@@ -26,11 +27,31 @@ export class ListEmployeeComponent implements OnInit {
     });
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(CreateEmployeeComponent, {
-      width: '800px', // Điều chỉnh kích thước modal theo ý muốn
-      height: '500px',
+  delete(id: number) {
+    this.employeeService.delete(id).subscribe(() => {
+      alert("Xóa thành công");
+    }, e => {
+      console.log(e);
     });
+  }
+
+  openDialog(id: number): void {
+    let dialogRef;
+    
+    if (id == -1) {
+      dialogRef = this.dialog.open(CreateEmployeeComponent, {
+        width: '800px', // Điều chỉnh kích thước modal theo ý muốn
+        height: '500px',
+      });
+    } else {
+      dialogRef = this.dialog.open(EditEmployeeComponent, {
+        width: '800px', // Điều chỉnh kích thước modal theo ý muốn
+        height: '500px',
+        data: {
+          id: id,
+        },
+      });
+    }
 
     // Có thể thực hiện xử lý sau khi modal đã đóng ở đây
     dialogRef.afterClosed().subscribe(result => {
