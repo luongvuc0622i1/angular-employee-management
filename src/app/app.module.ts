@@ -15,6 +15,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
+import { ProfileEmployeeComponent } from './profile-employee/profile-employee.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
     HeaderComponent,
     ListEmployeeComponent,
     CreateEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    ProfileEmployeeComponent
   ],
     imports: [
         BrowserModule,

@@ -25,15 +25,15 @@ export class AccountComponent implements OnInit, AfterViewInit {
               private router: Router) { }
 
   ngAfterViewInit() {
-    const signUpButton = document.getElementById('signUp');
+    // const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
 
-    // @ts-ignore
-    signUpButton.addEventListener('click', () => {
-      // @ts-ignore
-      container.classList.add("right-panel-active");
-    });
+    // // @ts-ignore
+    // signUpButton.addEventListener('click', () => {
+    //   // @ts-ignore
+    //   container.classList.add("right-panel-active");
+    // });
 
     // @ts-ignore
     signInButton.addEventListener('click', () => {
@@ -41,53 +41,53 @@ export class AccountComponent implements OnInit, AfterViewInit {
       container.classList.remove("right-panel-active");
     });
 
-    // Show password click eye
-    const togglePassword = document.querySelector('#togglePassword');
-    const password = document.querySelector('#id_password');
+  //   // Show password click eye
+  //   const togglePassword = document.querySelector('#togglePassword');
+  //   const password = document.querySelector('#id_password');
 
-    // @ts-ignore
-    togglePassword.addEventListener('click', function (e) {
-      // toggle the type attribute
-      // @ts-ignore
-      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-      // @ts-ignore
-      password.setAttribute('type', type);
-      // toggle the eye slash icon
-      // @ts-ignore
-      this.classList.toggle('fa-eye-slash');
-    });
+  //   // @ts-ignore
+  //   togglePassword.addEventListener('click', function (e) {
+  //     // toggle the type attribute
+  //     // @ts-ignore
+  //     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  //     // @ts-ignore
+  //     password.setAttribute('type', type);
+  //     // toggle the eye slash icon
+  //     // @ts-ignore
+  //     this.classList.toggle('fa-eye-slash');
+  //   });
 
-    // Show password click eye2
-    const togglePassword2 = document.querySelector('#togglePassword2');
-    const password2 = document.querySelector('#id_password2');
+  //   // Show password click eye2
+  //   const togglePassword2 = document.querySelector('#togglePassword2');
+  //   const password2 = document.querySelector('#id_password2');
 
-    // @ts-ignore
-    togglePassword2.addEventListener('click', function (e) {
-      // toggle the type attribute
-      // @ts-ignore
-      const type2 = password2.getAttribute('type') === 'password' ? 'text' : 'password';
-      // @ts-ignore
-      password2.setAttribute('type', type2);
-      // toggle the eye slash icon
-      // @ts-ignore
-      this.classList.toggle('fa-eye-slash');
-    });
+  //   // @ts-ignore
+  //   togglePassword2.addEventListener('click', function (e) {
+  //     // toggle the type attribute
+  //     // @ts-ignore
+  //     const type2 = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+  //     // @ts-ignore
+  //     password2.setAttribute('type', type2);
+  //     // toggle the eye slash icon
+  //     // @ts-ignore
+  //     this.classList.toggle('fa-eye-slash');
+  //   });
 
-    // Show password click eye1
-    const togglePassword1 = document.querySelector('#togglePassword1');
-    const password1 = document.querySelector('#id_password1');
+  //   // Show password click eye1
+  //   const togglePassword1 = document.querySelector('#togglePassword1');
+  //   const password1 = document.querySelector('#id_password1');
 
-    // @ts-ignore
-    togglePassword1.addEventListener('click', function (e) {
-      // toggle the type attribute
-      // @ts-ignore
-      const type1 = password1.getAttribute('type') === 'password' ? 'text' : 'password';
-      // @ts-ignore
-      password1.setAttribute('type', type1);
-      // toggle the eye slash icon
-      // @ts-ignore
-      this.classList.toggle('fa-eye-slash');
-    });
+  //   // @ts-ignore
+  //   togglePassword1.addEventListener('click', function (e) {
+  //     // toggle the type attribute
+  //     // @ts-ignore
+  //     const type1 = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+  //     // @ts-ignore
+  //     password1.setAttribute('type', type1);
+  //     // toggle the eye slash icon
+  //     // @ts-ignore
+  //     this.classList.toggle('fa-eye-slash');
+  //   });
   }
 
   login() {
