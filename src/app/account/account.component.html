@@ -1,4 +1,4 @@
-<div class="containerBody" style="background: #f6f5f7; display: flex; justify-content: center; align-items: center; flex-direction: column; font-family: 'Montserrat', sans-serif; height: 100vh; margin: -20px 0 50px;">
+<div class="containerBody" style="background: rgb(231, 175, 20); display: flex; justify-content: center; align-items: center; flex-direction: column; font-family: 'Montserrat', sans-serif; height: 100vh;">
   <div class="container" id="container">
     <!-- <div class="form-container sign-up-container">
       <form (ngSubmit)="f.form.valid && register()" #f="ngForm">
@@ -16,17 +16,18 @@
     <div class="form-container sign-in-container">
       <form (ngSubmit)="f.form.valid && login()" #f="ngForm">
         <h1>Sign in</h1>
-        <div class="social-container">
+        <!-- <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <span>or use your account</span>
+        <span>or use your account</span> -->
         <p style="color: red">{{statusLogin}}</p>
         <input type="text" [(ngModel)]="form.username" name="username" placeholder="Username" />
         <input type="password" [(ngModel)]="form.password" name="password" placeholder="Password" autocomplete="current-password" required="" id="id_password">
         <i class="far fa-eye" id="togglePassword" style="margin-left: 240px; cursor: pointer; margin-top: -35px"></i><br>
-        <a href="#">Forgot your password?</a>
+        <!-- <a href="#">Forgot your password?</a> -->
+        <a></a>
         <button>Sign In</button>
       </form>
     </div>
