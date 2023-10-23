@@ -9,8 +9,10 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class HeaderComponent {
   username: any;
+  role: any;
   ngOnInit(): void {
     this.username = this.tokenService.getUsername();
+    this.role = this.tokenService.getRole().slice(5);
   }
 
   constructor(private tokenService: TokenService, private router: Router) { }

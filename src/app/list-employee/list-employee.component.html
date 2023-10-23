@@ -49,12 +49,11 @@
                   <div class="content table-responsive table-full-width">
                       <table class="table table-hover table-striped">
                           <thead>
-                          <tr>
+                          <tr style="text-align: center">
                             <th>STT</th>
+                            <th>Họ</th>
+                            <th>Tên</th>
                             <th>Username</th>
-                            <th>Password</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Status</th>
@@ -65,14 +64,20 @@
                           </thead>
                           <tbody id="myTable">
                             <tr *ngFor="let employee of employees; index as i">
-                              <td>{{i + 1}}</td>
-                              <td>{{employee.username}}</td>
-                              <td>{{employee.password}}</td>
-                              <td>{{employee.firstName}}</td>
+                              <td style="text-align: center">{{i + 1}}</td>
                               <td>{{employee.lastName}}</td>
+                              <td>{{employee.firstName}}</td>
+                              <td>{{employee.username}}</td>
                               <td>{{employee.email}}</td>
-                              <td>{{employee.phone}}</td>
-                              <td>{{employee.status}}</td>
+                              <td style="text-align: right">{{employee.phone}}</td>
+                              <td style="text-align: center">
+                                <ng-container *ngIf="employee.status === 0; else activeBlock">
+                                  Inactive
+                                </ng-container>
+                                <ng-template #activeBlock>
+                                  Active
+                                </ng-template>
+                              </td>
                               <td style="text-align: center">
                                 <a class="view" title="View" data-toggle="tooltip" (click)="openDialog(employee.id)">
                                     <i class="material-icons">&#xE417;</i>

@@ -29,7 +29,7 @@ export class ListEmployeeComponent implements OnInit {
 
   delete(id: number) {
     this.employeeService.delete(id).subscribe(() => {
-      alert("Xóa thành công");
+      // window.location.reload();
     }, e => {
       console.log(e);
     });

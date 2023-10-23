@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { EmployeeService } from '../service/employee.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class CreateEmployeeComponent implements OnInit {
     status: new FormControl(),
   });
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(private employeeService: EmployeeService,
+              private dialogRef: MatDialogRef<CreateEmployeeComponent>) {
   }
 
   ngOnInit() {
@@ -28,7 +30,8 @@ export class CreateEmployeeComponent implements OnInit {
     const employee = this.employeeForm.value;
     this.employeeService.create(employee).subscribe(() => {
       this.employeeService.reset();
-      alert('Tạo thành công');
+      this.dialogRef.close();
+      window.location.reload();
     }, e => {
       console.log(e);
     });

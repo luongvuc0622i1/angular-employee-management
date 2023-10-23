@@ -1,9 +1,7 @@
 import { TokenService } from '../service/token.service';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeService } from '../service/employee.service';
-import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 
 @Component({
   selector: 'app-profile-employee',
@@ -13,13 +11,9 @@ import { EditEmployeeComponent } from '../edit-employee/edit-employee.component'
 export class ProfileEmployeeComponent implements OnInit {
   // @ts-ignore
   employeeForm: FormGroup;
-  id: number;
 
   constructor(private employeeService: EmployeeService,
-              private tokenService: TokenService,
-              public dialogRef: MatDialogRef<EditEmployeeComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) {
-    this.id = this.data.id;
+              private tokenService: TokenService) {
     this.getEmployee();
   }
 
@@ -27,6 +21,7 @@ export class ProfileEmployeeComponent implements OnInit {
   }
 
   getEmployee() {
+    console.log(parseInt(this.tokenService.getID()));
     return this.employeeService.findById(parseInt(this.tokenService.getID())).subscribe(employee => {
       this.employeeForm = new FormGroup({
         username: new FormControl(employee.username),
@@ -35,7 +30,7 @@ export class ProfileEmployeeComponent implements OnInit {
         lastName: new FormControl(employee.lastName),
         email: new FormControl(employee.email),
         phone: new FormControl(employee.phone),
-        status: new FormControl(employee.status),
+        status: new FormControl(employee.status ? 'Active' : 'Inactive'),
       });
     });
   }

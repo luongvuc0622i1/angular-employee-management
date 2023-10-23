@@ -40,7 +40,8 @@ export class EditEmployeeComponent implements OnInit {
   update() {
     const category = this.employeeForm.value;
     this.employeeService.update(this.id, category).subscribe(() => {
-      alert('Cập nhật thành công');
+      this.dialogRef.close();
+      window.location.reload();
     }, e => {
       console.log(e);
     });
